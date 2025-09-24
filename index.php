@@ -1,0 +1,158 @@
+<?php
+// Set proper headers
+header('Content-Type: text/html; charset=UTF-8');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration & Login System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome</h1>
+            <p>Create your account or sign in to continue</p>
+        </div>
+
+        <!-- Dashboard (hidden by default) -->
+        <div id="dashboard" class="dashboard" style="display: none;">
+            <h2 id="welcomeMessage">Welcome!</h2>
+            <div class="user-info">
+                <h3>Your Profile</h3>
+                <div id="userDetails"></div>
+            </div>
+            <button type="button" class="btn logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- Forms Container -->
+        <div id="formsContainer" class="form-container">
+            <!-- Message Display -->
+            <div id="messageContainer" class="message" style="display: none;"></div>
+
+            <!-- Form Toggle -->
+            <div class="form-toggle">
+                <button type="button" class="toggle-btn active" onclick="showForm('login')">Login</button>
+                <button type="button" class="toggle-btn" onclick="showForm('register')">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="form active">
+                <div class="form-group">
+                    <label for="login_username">Username</label>
+                    <input type="text" id="login_username" name="username" class="form-control" required>
+                    <div class="error-text" id="login_username_error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="login_password">Password</label>
+                    <input type="password" id="login_password" name="password" class="form-control" required>
+                    <div class="error-text" id="login_password_error"></div>
+                </div>
+
+                <button type="submit" class="btn">Sign In</button>
+            </form>
+
+            <!-- Registration Form -->
+            <form id="registerForm" class="form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" class="form-control" required>
+                    <div class="error-text" id="fullname_error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                    <div class="error-text" id="email_error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                    <div class="error-text" id="username_error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                    <div class="error-text" id="password_error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+                    <div class="error-text" id="confirm_password_error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="female" name="gender" value="female" required>
+                            <label for="female">Female</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="other" name="gender" value="other" required>
+                            <label for="other">Other</label>
+                        </div>
+                    </div>
+                    <div class="error-text" id="gender_error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Hobbies (Optional)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="reading" name="hobbies[]" value="reading">
+                            <label for="reading">Reading</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="gaming" name="hobbies[]" value="gaming">
+                            <label for="gaming">Gaming</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sports" name="hobbies[]" value="sports">
+                            <label for="sports">Sports</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="music" name="hobbies[]" value="music">
+                            <label for="music">Music</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country (Optional)</label>
+                    <select id="country" name="country" class="form-control">
+                        <option value="">Select your country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="AU">Australia</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                        <option value="JP">Japan</option>
+                        <option value="CN">China</option>
+                        <option value="IN">India</option>
+                        <option value="BR">Brazil</option>
+                        <option value="PH">Philippines</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

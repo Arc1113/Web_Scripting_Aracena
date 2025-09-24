@@ -1,0 +1,12 @@
+[
+    {
+        "fullname": "Robert Jhon Aracena",
+        "email": "robertjhonaracenab@gmail.com",
+        "username": "robert",
+        "password": "$2y$10$g3q2YJ5L4\/vQlbG1nnQtReeZvm0vaocRzsERXv.mMh2ejGtZvWUTG",
+        "gender": "male",
+        "hobbies": "reading, gaming, sports, music",
+        "country": "PH",
+        "created_at": "2025-09-24 08:43:09"
+    }
+]
